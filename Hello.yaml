@@ -1,5 +1,5 @@
 ---
--name: Hello playbook
+- name: Hello playbook
   hosts: web
   tasks:
   - name: Say hello
