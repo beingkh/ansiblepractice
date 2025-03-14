@@ -1,0 +1,15 @@
+---
+- name: printing varibales from local scope
+  hosts: local
+  connection: local
+  vars:
+    A: 100
+    B: 200
+    C: 300
+  tasks:
+  - name: 01. printing variables
+    vars:
+      A: 10
+      B: 20
+    ansible.builtin.debug:
+      msg: " A: {{A}}, B: {{B}}, C: {{C}}"
