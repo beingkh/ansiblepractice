@@ -3,7 +3,7 @@
   hosts: local
   connection: local
   vars_files:
-  - /c:/Users/Rakes/OneDrive/Desktop/Devops/varfiles.yaml
+  - /Devops/varfiles.yaml
   tasks:
   - name: 01. print variables
     ansible.builtin.debug:
