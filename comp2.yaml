@@ -1,9 +1,10 @@
 ---
 - name: printing variables from var files
   hosts: local
+  connection: local
   vars_files:
-  - varfiles.yaml
+  - /c:/Users/Rakes/OneDrive/Desktop/Devops/varfiles.yaml
   tasks:
   - name: 01. print variables
     ansible.builtin.debug:
-      msg: " A: {{ A }} B: {{ B }} C: {{ C }}"
+      msg: "A: {{ A }} B: {{ B }} C: {{ C }}"
