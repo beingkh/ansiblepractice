@@ -3,14 +3,14 @@
   hosts: local
   connection: local
   tasks:
-    -name: play1
-      ansible.builtin.debug:
+  - name: play1
+    ansible.builtin.debug:
       msg: "printing a message from play1"
 
 - name: play2
   hosts: local
   connection: local
   tasks:
-    -name: play1
-      ansible.builtin.debug:
+  - name: play2
+    ansible.builtin.debug:
       msg: "printing a message from play2"
