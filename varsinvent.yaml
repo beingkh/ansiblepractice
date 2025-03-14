@@ -1,0 +1,7 @@
+---
+- name: printing variables from var files
+  hosts: web
+  tasks:
+  - name: 01. print variables
+    ansible.builtin.debug:
+      msg: "A: {{ A }} B: {{ B }} C: {{ C }}"
