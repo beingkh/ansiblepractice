@@ -1,0 +1,40 @@
+---
+- name: all variables
+  hosts: local
+  connection: local
+  vars:
+    A: 10
+    B: 20
+    C: 30
+  tasks:
+  - name: 01. printing global variables
+    ansible.builtin.debug:
+      msg: "A is {{ A }} and B is {{ B }} and C is {{ C }}"
+
+  - name: 02. printing local variables
+    vars:
+      A: 100
+      B: 200
+      C: 300
+    ansible.builtin.debug:
+      msg: "A is {{ A }} and B is {{ B }} and C is {{ C }}"
+
+  - name: 03. printing variables from vars_files
+    vars_files:
+    - varfiles.yaml
+    ansible.builtin.debug:
+      msg: "A is {{ A }} and B is {{ B }} and C is {{ C }}"
+
+  - name: 04. printing variables from prompt
+    vars_prompt:
+    - name: A
+      prompt: "Enter A"
+      private: no
+    - name: B
+      prompt: "Enter B"
+      private: no
+    - name: C
+      prompt: "Enter C"
+      private: no
+    ansible.builtin.debug:
+      msg: "A is {{ A }} and B is {{ B }} and C is {{ C }}"
