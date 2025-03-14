@@ -20,8 +20,8 @@
       msg: "A is {{ A }} and B is {{ B }} and C is {{ C }}"
 
   - name: 03. printing variables from vars_files
-    vars_files:
-    - /c:/Users/Rakes/OneDrive/Desktop/Devops/varfiles.yaml
+    var_files:
+    - varfiles.yaml
     ansible.builtin.debug:
       msg: "A is {{ A }} and B is {{ B }} and C is {{ C }}"
 
